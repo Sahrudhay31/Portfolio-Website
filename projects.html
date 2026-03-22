@@ -1,139 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahrudhay | Project Details</title> 
+    <title>Sahrudhay | Featured Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .detailed-projects {
-            padding: 100px 20px 50px 20px;
-            max-width: 1000px;
-            margin: auto;
-            min-height: auto;
-            display: block;
+        body, html {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #050510, #0a1128);
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
         }
-        
-        .detailed-projects h1 {
+
+        .gradient-title {
+            font-size: 55px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #4da6ff, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
             text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .detailed-projects {
+            padding: 120px 5% 80px 5%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .project-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
         }
 
         .project-detail-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-            margin-bottom: 40px;
-            border-left: 5px solid #4da6ff;
-            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        
+
+        .project-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4da6ff, #00f2fe);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
         .project-detail-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(77, 166, 255, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(77, 166, 255, 0.15);
+            border-color: rgba(77, 166, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .project-detail-card:hover::before {
+            transform: scaleX(1);
         }
 
         .project-detail-card h2 {
             margin-top: 0;
-            color: #4da6ff;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         .project-detail-card p {
-            color: #ccc;
-            line-height: 1.6;
+            color: #bbb;
+            line-height: 1.7;
+            font-size: 16px;
+            flex-grow: 1;
+            margin-bottom: 30px;
         }
-        
+
         .tech-stack {
-            margin-top: 15px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-top: auto;
         }
-        
+
         .tech-pill {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 12px;
-            border-radius: 15px;
+            background: rgba(77, 166, 255, 0.08);
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #80c1ff;
+            transition: all 0.3s;
+        }
+
+        .tech-pill:hover {
+            background: rgba(77, 166, 255, 0.2);
+            border-color: #4da6ff;
+            color: #fff;
+            transform: translateY(-2px);
         }
         
-        .read-btn:hover {
-            background: #333;
-            color: #4da6ff;
+        .ambient-glow-projects {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: #4da6ff;
+            filter: blur(150px);
+            opacity: 0.15;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
         }
     </style>
 </head>
+
 <body>
+    <div class="ambient-glow-projects"></div>
 
     <!-- NAVBAR FOR CONSISTENCY -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html#projects">← Back to Portfolio</a></li>
+    <nav class="navbar" style="position: fixed; width: 100%; top: 0; padding: 10px 0; background: rgba(10, 17, 40, 0.8); backdrop-filter: blur(10px); z-index: 100;">
+        <ul class="nav-links" style="display: flex; justify-content: center; list-style: none; margin: 0; padding: 0;">
+            <li style="padding: 10px 20px; border-radius: 20px; transition: 0.3s; background: rgba(255,255,255,0.05);">
+                <a href="index.html#projects" style="color: #fff; text-decoration: none; font-weight: 500; letter-spacing: 0.5px;">← Return to Portfolio</a>
+            </li>
         </ul>
     </nav>
 
     <div class="detailed-projects">
-        <h1>Detailed Projects overview</h1>
+        <h1 class="gradient-title">Engineering Deep Dives</h1>
+        <p class="subtitle">An inside look at the architecture, deployment strategies, and underlying logic behind my featured developments.</p>
 
-        <!-- Project 1 -->
-        <div id="aws-s3" class="project-detail-card">
-            <h2>☁️ Deploying Static Website using AWS (s3)</h2>
-            <p>
-                A comprehensive project showcasing cloud deployment strategies by hosting a highly available, secure static website on Amazon Web Services using Amazon S3. Configured bucket policies for secure public access and leveraged custom routing configurations for high availability and low latency.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-pill">AWS S3</span>
-                <span class="tech-pill">Cloud Deployment</span>
-                <span class="tech-pill">Web Hosting</span>
+        <div class="project-details-grid">
+            <!-- Project 1 -->
+            <div id="aws-s3" class="project-detail-card">
+                <h2>☁️ AWS Cloud Website & S3 Routing</h2>
+                <p>
+                    Architected a highly available static web delivery pipeline using Amazon Web Services. Configured secure S3 bucket policies for public access isolation, and mapped custom routing rules leveraging DNS resolution to guarantee high availability and low latency endpoint metrics.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">AWS S3</span>
+                    <span class="tech-pill">Cloud Deploy</span>
+                    <span class="tech-pill">DNS Routing</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div id="bulk-renamer" class="project-detail-card">
+                <h2>📂 Batch File Automator</h2>
+                <p>
+                    Engineered an automation script utilized via Google Apps Script to drastically accelerate batch file renaming tasks securely within the cloud. Dynamically parses massive directory trees, applies configurable string manipulations, and reduces manual overhead by 90%.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Apps Script</span>
+                    <span class="tech-pill">Regex & JS</span>
+                    <span class="tech-pill">Cloud Automation</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div id="tic-tac-toe" class="project-detail-card">
+                <h2>❌⭕ Interactive Logic Engine</h2>
+                <p>
+                    A fully responsive engine utilizing vanilla Javascript arrays to instantly calculate algorithmic win-states. It prioritizes O(1) state resolution matrices and dynamic DOM component rendering without leveraging any heavy external frameworks.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">DOM Logic</span>
+                    <span class="tech-pill">Array Matrices</span>
+                    <span class="tech-pill">State Trees</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div id="aws-iam" class="project-detail-card">
+                <h2>🔐 Cloud IAM Security Control</h2>
+                <p>
+                    Structured a robust security environment within AWS adhering strictly to the Principle of Least Privilege. Deployed granular Identity and Access Management (IAM) controls via JSON policies, heavily restricting unauthorized cross-environment deployment access.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">AWS IAM</span>
+                    <span class="tech-pill">JSON Policies</span>
+                    <span class="tech-pill">Zero Trust</span>
+                </div>
             </div>
         </div>
-
-        <!-- Project 2 -->
-        <div id="bulk-renamer" class="project-detail-card">
-            <h2>📂 Bulk File Renamer</h2>
-            <p>
-                An automation script built using Google Apps Script to efficiently rename large batches of files within Google Drive. Designed to match file patterns and execute dynamic renaming tasks automatically, vastly increasing productivity and reducing manual data entry overhead.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-pill">Google Apps Script</span>
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">Automation Scripts</span>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div id="tic-tac-toe" class="project-detail-card">
-            <h2>❌⭕ Tic Tac Toe</h2>
-            <p>
-                A sleek, interactive implementation of the classic Tic Tac Toe game. Built focusing on dynamic component updates, complete win/tie state checking logic, and an elegant layout. Perfect demonstration of essential game logic loop processing.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-pill">Game Logic</span>
-                <span class="tech-pill">Algorithms</span>
-                <span class="tech-pill">Variables & State</span>
-            </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div id="aws-iam" class="project-detail-card">
-            <h2>🔐 Cloud Security with AWS IAM</h2>
-            <p>
-                A dedicated cloud security implementation architecting Identity and Access Management (IAM) controls on AWS. Defined strict, least-privilege security policies, created user groups with specific bounded access, and established secure programmatic interaction protocols.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-pill">AWS IAM</span>
-                <span class="tech-pill">Cloud Security</span>
-                <span class="tech-pill">Access Policies</span>
-            </div>
-        </div>
-        
     </div>
 
-    <footer>
-        <p>© 2026 Sahrudhay | Portfolio Website</p>
+    <footer style="text-align: center; color: #888; padding: 40px; margin-top: 50px;">
+        <p>© 2026 Sahrudhay | Engineering Portfolio</p>
     </footer>
 
 </body>
+
 </html>
