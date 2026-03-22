@@ -6,25 +6,18 @@
     <title>Sahrudhay Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
-
-
     <!-- NAVBAR -->
-
     <nav class="navbar">
-
         <ul class="nav-links">
             <li class="active"><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#blog">Blog</a></li>
         </ul>
-        <a href="mailto:munnasahrudhay@gmail.com">
-            <button class="call-btn">Contact Me</button>
-        </a>
     </nav>
 
 
@@ -38,156 +31,441 @@
         <h2>Computer Science Student</h2>
 
         <p>
-            Building Full Stack Web Applications and exploring scalable systems
+            Building Modern Frontend Applications and exploring scalable systems
         </p>
 
-    </section>
-
-
-
-    <!-- ABOUT -->
-
-    <section id="about" class="about">
-
-        <h2>🚀 About Me</h2>
-
-        <ul>
-            <li>🎓 Computer Science Student</li>
-            <li>💻 Currently building Full Stack Web Applications</li>
-            <li>☁️ Learning Cloud Computing</li>
-            <li>📚 Learning Data Structures & Algorithms</li>
-            <li>🔥 Interested in Backend Development & Problem Solving</li>
-            <li>🌱 Exploring System Design & Scalable Applications</li>
-        </ul>
-
-    </section>
-
-    <section id="education" class="education">
-
-        <h2>🎓 Education</h2>
-
-        <div class="edu-card">
-
-            <h3>B.Tech in Computer Science and Engineering</h3>
-            <p>
-                Amrita Vishwa Vidyapeetham
-            </p>
-            <p>
-                Focused on software development, algorithms,
-                cloud computing and system design.
-            </p>
+        <div class="hero-buttons">
+            <a href="#projects" class="hero-btn primary-btn">View My Work</a>
+            <a href="#contact" class="hero-btn secondary-btn">Contact Me</a>
         </div>
+
+        <div class="scroll-indicator">
+            <p>Swipe / Scroll to explore</p>
+            <a href="#about" aria-label="Scroll down to About section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </a>
+        </div>
+
     </section>
-    <section id="skills" class="skills">
 
-        <h2>💻 Skills</h2>
 
-        <div class="skills-container">
 
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>Java</p>
-                <p>Python</p>
-                <p>JavaScript</p>
-            </div>
+    <!-- ABOUT & EDUCATION -->
 
-            <div class="skill-card">
-                <h3>Web Development</h3>
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>Node.js</p>
-                <p>MySQL</p>
-            </div>
+    <section id="about" class="about redesigned-about">
+        <h2 class="section-title">About <span>Me</span></h2>
 
-            <div class="skill-card">
-                <h3>Tools & Technologies</h3>
-                <p>AWS</p>
-                <p>GitHub</p>
-                <p>Google Apps Script</p>
-            </div>
+        <div class="about-container">
+            <div class="about-content">
+                <h3>Aspiring AI Data Science Student</h3>
 
-            <div class="skill-card">
-                <h3>Concepts</h3>
-                <p>Data Structures</p>
-                <p>Algorithms</p>
-                <p>System Design</p>
+                <p>
+                    👨‍🎓 Currently studying <strong>Artificial Intelligence and Data Science</strong> at <strong>Amrita
+                        Vishwa Vidyapeetham</strong>. I specialize in building fast, responsive, and user-centric web
+                    applications while exploring advanced artificial intelligence concepts.
+                </p>
+
+                <p>
+                    I have built a strong foundation in <strong>Frontend Development</strong> and <strong>Cloud
+                        Computing</strong> architectures. I'm passionate about transforming complex requirements into
+                    functional digital solutions, leveraging data science to create intuitive user experiences.
+                </p>
+
+                <div class="about-buttons">
+                    <a href="#contact" class="get-in-touch-btn">Get in Touch</a>
+                    <a href="#" class="download-cv-btn">Download CV</a>
+                </div>
             </div>
 
         </div>
+        </div>
+    </section>
+    <section id="skills" class="skills redesigned-skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
 
+        <!-- CSS Only Filtering -->
+        <input type="radio" name="skill-filter" id="filter-all" checked hidden>
+        <input type="radio" name="skill-filter" id="filter-frontend" hidden>
+        <input type="radio" name="skill-filter" id="filter-backend" hidden>
+        <input type="radio" name="skill-filter" id="filter-tools" hidden>
+
+        <!-- TABS -->
+        <div class="skill-tabs">
+            <label for="filter-all" class="skill-tab tab-all">All</label>
+            <label for="filter-frontend" class="skill-tab tab-frontend">Frontend</label>
+            <label for="filter-backend" class="skill-tab tab-backend">Backend / Cloud</label>
+            <label for="filter-tools" class="skill-tab tab-tools">Tools & Concepts</label>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-item" data-category="frontend">
+                <div class="skill-info">
+                    <span class="skill-icon">🌐</span>
+                    <span class="skill-name">HTML</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 95%;"></div>
+                </div>
+                <span class="skill-percent">95%</span>
+            </div>
+
+            <div class="skill-item" data-category="frontend">
+                <div class="skill-info">
+                    <span class="skill-icon">🎨</span>
+                    <span class="skill-name">CSS</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+            </div>
+
+            <div class="skill-item" data-category="frontend">
+                <div class="skill-info">
+                    <span class="skill-icon">⚡</span>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+            </div>
+
+            <div class="skill-item" data-category="frontend">
+                <div class="skill-info">
+                    <span class="skill-icon">🔷</span>
+                    <span class="skill-name">TypeScript</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">🟢</span>
+                    <span class="skill-name">Node.js</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">☕</span>
+                    <span class="skill-name">Java</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">🐍</span>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">🐘</span>
+                    <span class="skill-name">PostgreSQL</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <span class="skill-percent">75%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">🐬</span>
+                    <span class="skill-name">MySQL</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <span class="skill-percent">75%</span>
+            </div>
+
+            <div class="skill-item" data-category="backend">
+                <div class="skill-info">
+                    <span class="skill-icon">☁️</span>
+                    <span class="skill-name">AWS</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <span class="skill-percent">70%</span>
+            </div>
+
+            <div class="skill-item" data-category="tools">
+                <div class="skill-info">
+                    <span class="skill-icon">🧠</span>
+                    <span class="skill-name">AI / ML</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-item" data-category="tools">
+                <div class="skill-info">
+                    <span class="skill-icon">🐙</span>
+                    <span class="skill-name">GitHub</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+            </div>
+
+            <div class="skill-item" data-category="tools">
+                <div class="skill-info">
+                    <span class="skill-icon">🏗️</span>
+                    <span class="skill-name">System Design</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <span class="skill-percent">75%</span>
+            </div>
+        </div>
     </section>
 
     <!-- PROJECTS -->
 
     <section id="projects" class="projects">
         <h2>Featured Projects</h2>
-        <div class="projects-container">
-            <div class="card">
-                <h3>🌍 Tourism Management System</h3>
-                <p>
-                    Full stack tourism application with login system
-                    and MySQL database.
-                </p>
+        <div class="projects-container redesigned">
+
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="assets/amazon-s3.png" alt="AWS S3" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">AWS S3</span>
+                        <span class="project-tag">Cloud</span>
+                    </div>
+                    <h3>☁️ Static Website on AWS</h3>
+                    <p>Deployed a high-performance static website using Amazon S3.</p>
+                    <div class="project-actions">
+                        <a href="projects.html#aws-s3" class="live-link-btn">Live Link ↗</a>
+                        <a href="#" class="github-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>📂 Bulk File Renaming Tool</h3>
-                <p>
-                    Google Apps Script automation tool
-                    to rename files in bulk in Google Drive.
-                </p>
+
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&q=80"
+                        alt="Bulk Renamer" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Google API</span>
+                    </div>
+                    <h3>📂 Bulk File Renamer</h3>
+                    <p>Automation tool to rename files in bulk inside Google Drive.</p>
+                    <div class="project-actions">
+                        <a href="projects.html#bulk-renamer" class="live-link-btn">Live Link ↗</a>
+                        <a href="https://github.com/Sahrudhay31/Bulk-File-Renamer" class="github-link"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>🐦 Flappy Bird Game</h3>
-                <p>
-                    Java implementation of Flappy Bird game.
-                </p>
+
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="assets/tic-tac-toe.jpg" alt="Tic Tac Toe" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JS</span>
+                    </div>
+                    <h3> Tic Tac Toe</h3>
+                    <p>Classic interactive logic game with win-state algorithms.</p>
+                    <div class="project-actions">
+                        <a href="projects.html#tic-tac-toe" class="live-link-btn">Live Link ↗</a>
+                        <a href="https://github.com/Sahrudhay31/Tic-Tac-Toe" class="github-link"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                    </div>
+                </div>
             </div>
+
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="assets/aws-iam.png" alt="Cloud Security" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">AWS IAM</span>
+                        <span class="project-tag">Security</span>
+                    </div>
+                    <h3>🔐 Cloud Security</h3>
+                    <p>Architected robust access control and least-privilege security.</p>
+                    <div class="project-actions">
+                        <a href="projects.html#aws-iam" class="live-link-btn">Live Link ↗</a>
+                        <a href="#" class="github-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
-    <section id="blog" class="blog">
-        <h2>📝 Blog</h2>
-        <div class="blog-container">
-            <div class="blog-card">
-                <h3>🚀 My Journey Into Full Stack Development</h3>
-                <p>
-                    How I started learning web development and built my
-                    first projects using HTML, CSS and JavaScript.
-                </p>
-                <a href="#">Read More</a>
-            </div>
+    <section id="blog" class="blog redesigned-blog">
+        <div class="blog-header">
+            <h2 class="section-title">My <span>Writings</span></h2>
+            <p>Thoughts, tutorials, and insights on frontend development and the cloud.</p>
+        </div>
 
-            <div class="blog-card">
-                <h3>☁️ Learning Cloud Computing with AWS</h3>
-                <p>
-                    My experience learning AWS services and building
-                    hands-on projects in cloud computing.
-                </p>
-                <a href="#">Read More</a>
-            </div>
+        <div class="blog-container redesigned">
+            <!-- Blog Card 1 -->
+            <a href="https://medium.com/@munnasahrudhay/my-journey-into-frontend-development-from-zero-to-deploy-46a3485f90b1"
+                target="_blank" class="premium-blog-card">
+                <div class="blog-card-visual gradient-1">
+                    <span class="platform-badge">Medium</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 2026</span>
+                        <span class="blog-read-time">5 min read</span>
+                    </div>
+                    <h3>🚀 My Journey Into Frontend Development</h3>
+                    <p>How I started learning web development and built my first projects using HTML, CSS and
+                        JavaScript.</p>
+                    <span class="read-more-link">Read Article <span class="arrow">↗</span></span>
+                </div>
+            </a>
 
-            <div class="blog-card">
-                <h3>📚 Mastering Data Structures</h3>
-                <p>
-                    Understanding arrays, stacks, queues and algorithms
-                    to improve problem solving skills.
-                </p>
-                <a href="#">Read More</a>
-            </div>
+            <!-- Blog Card 2 -->
+            <a href="https://medium.com/@munnasahrudhay/stepping-into-the-cloud-my-experience-learning-aws-dc4e352bdb2c"
+                target="_blank" class="premium-blog-card">
+                <div class="blog-card-visual gradient-2">
+                    <span class="platform-badge">Medium</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 2026</span>
+                        <span class="blog-read-time">7 min read</span>
+                    </div>
+                    <h3>☁️ Stepping Into The Cloud with AWS</h3>
+                    <p>My experience learning AWS services and building hands-on projects in cloud computing.</p>
+                    <span class="read-more-link">Read Article <span class="arrow">↗</span></span>
+                </div>
+            </a>
         </div>
     </section>
 
 
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <h2>🔗 Connect With Me</h2>
-        <p>Email: munnasahrudhay@gmail.com</p>
-        <p>
-            <a href="https://github.com/Sahrudhay31" target="_blank">GitHub</a>
-        </p>
-        <p>
-            <a href="https://linkedin.com/in/sahrudhay" target="_blank">LinkedIn</a>
-        </p>
+    <section id="contact" class="contact redesigned-contact">
+        <div class="contact-header">
+            <h2>Get In <span>Touch</span></h2>
+            <p>Have a project or idea? Let's connect and bring it to life together.</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>munnasahrudhay@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">💼</div>
+                    <div class="info-text">
+                        <h4>LinkedIn</h4>
+                        <p>linkedin.com/in/sahrudhay</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>Location</h4>
+                        <p>India</p>
+                    </div>
+                </div>
+
+                <div class="social-connect">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/Sahrudhay31" class="github-link"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg></a>
+                        <a href="https://linkedin.com/in/sahrudhay" target="_blank" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3>Send a Message</h3>
+                <form class="contact-form" action="#">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="john@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="5" placeholder="Hello! I'd like to talk about..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="send-btn">Send Message 🚀</button>
+                </form>
+            </div>
+        </div>
     </section>
     <!-- FOOTER -->
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahrudhay | Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detailed-projects {
+            padding: 100px 20px 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+            min-height: auto;
+            display: block;
+        }
+        
+        .detailed-projects h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .project-detail-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+            margin-bottom: 40px;
+            border-left: 5px solid #4da6ff;
+            transition: transform 0.3s;
+        }
+        
+        .project-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(77, 166, 255, 0.2);
+        }
+
+        .project-detail-card h2 {
+            margin-top: 0;
+            color: #4da6ff;
+        }
+
+        .project-detail-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+        }
+        
+        .read-btn:hover {
+            background: #333;
+            color: #4da6ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR FOR CONSISTENCY -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html#projects">← Back to Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="detailed-projects">
+        <h1>Detailed Projects overview</h1>
+
+        <!-- Project 1 -->
+        <div id="aws-s3" class="project-detail-card">
+            <h2>☁️ Deploying Static Website using AWS (s3)</h2>
+            <p>
+                A comprehensive project showcasing cloud deployment strategies by hosting a highly available, secure static website on Amazon Web Services using Amazon S3. Configured bucket policies for secure public access and leveraged custom routing configurations for high availability and low latency.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-pill">AWS S3</span>
+                <span class="tech-pill">Cloud Deployment</span>
+                <span class="tech-pill">Web Hosting</span>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div id="bulk-renamer" class="project-detail-card">
+            <h2>📂 Bulk File Renamer</h2>
+            <p>
+                An automation script built using Google Apps Script to efficiently rename large batches of files within Google Drive. Designed to match file patterns and execute dynamic renaming tasks automatically, vastly increasing productivity and reducing manual data entry overhead.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-pill">Google Apps Script</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">Automation Scripts</span>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div id="tic-tac-toe" class="project-detail-card">
+            <h2>❌⭕ Tic Tac Toe</h2>
+            <p>
+                A sleek, interactive implementation of the classic Tic Tac Toe game. Built focusing on dynamic component updates, complete win/tie state checking logic, and an elegant layout. Perfect demonstration of essential game logic loop processing.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-pill">Game Logic</span>
+                <span class="tech-pill">Algorithms</span>
+                <span class="tech-pill">Variables & State</span>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div id="aws-iam" class="project-detail-card">
+            <h2>🔐 Cloud Security with AWS IAM</h2>
+            <p>
+                A dedicated cloud security implementation architecting Identity and Access Management (IAM) controls on AWS. Defined strict, least-privilege security policies, created user groups with specific bounded access, and established secure programmatic interaction protocols.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-pill">AWS IAM</span>
+                <span class="tech-pill">Cloud Security</span>
+                <span class="tech-pill">Access Policies</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>© 2026 Sahrudhay | Portfolio Website</p>
+    </footer>
+
+</body>
+</html>
