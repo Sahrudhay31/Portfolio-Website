@@ -14,10 +14,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Outfit', Arial, Helvetica, sans-serif;
             color: white;
             overflow: hidden;
             animation: fadeOutBody 2.6s forwards;
+            position: relative;
+        }
+
+        /* AMBIENT GLOW ANIMATIONS */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .glow-1 {
+            width: 400px;
+            height: 400px;
+            background: #ff477e;
+            top: -10%;
+            left: -10%;
+        }
+
+        .glow-2 {
+            width: 500px;
+            height: 500px;
+            background: #9d4edd;
+            bottom: -10%;
+            right: -10%;
         }
 
         @keyframes fadeOutBody {
@@ -27,23 +54,30 @@
 
         .loader-container {
             text-align: center;
+            z-index: 2;
         }
 
         .spinner {
             width: 60px;
             height: 60px;
             border: 5px solid rgba(255, 255, 255, 0.1);
-            border-top-color: #4da6ff;
+            border-top-color: #ff477e;
+            border-bottom-color: #ff9a44;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 1s cubic-bezier(0.5, 0.2, 0.5, 0.8) infinite;
             margin: 0 auto 20px;
         }
 
         .loading-text {
             font-size: 20px;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
             text-transform: uppercase;
+            font-weight: 600;
             animation: pulse 1.5s infinite;
+            background: linear-gradient(90deg, #ff477e, #ff9a44);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         @keyframes spin {
@@ -57,6 +91,9 @@
     </style>
 </head>
 <body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    
     <div class="loader-container">
         <div class="spinner"></div>
         <div class="loading-text">Loading</div>

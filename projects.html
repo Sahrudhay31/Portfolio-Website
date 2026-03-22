@@ -7,10 +7,12 @@
     <title>Sahrudhay | Featured Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        body, html {
+        body,
+        html {
             font-family: 'Outfit', sans-serif;
             background: linear-gradient(135deg, #050510, #0a1128);
             color: #fff;
@@ -21,7 +23,7 @@
         .gradient-title {
             font-size: 55px;
             font-weight: 800;
-            background: linear-gradient(90deg, #4da6ff, #00f2fe);
+            background: linear-gradient(90deg, #ff477e, #ff9a44);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -75,7 +77,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #4da6ff, #00f2fe);
+            background: linear-gradient(90deg, #ff477e, #ff9a44);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -83,8 +85,8 @@
 
         .project-detail-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(77, 166, 255, 0.15);
-            border-color: rgba(77, 166, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(255, 71, 126, 0.15);
+            border-color: rgba(255, 71, 126, 0.2);
             background: rgba(255, 255, 255, 0.05);
         }
 
@@ -117,29 +119,29 @@
         }
 
         .tech-pill {
-            background: rgba(77, 166, 255, 0.08);
-            border: 1px solid rgba(77, 166, 255, 0.2);
+            background: rgba(255, 71, 126, 0.08);
+            border: 1px solid rgba(255, 71, 126, 0.2);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.5px;
-            color: #80c1ff;
+            color: #ff9a44;
             transition: all 0.3s;
         }
 
         .tech-pill:hover {
-            background: rgba(77, 166, 255, 0.2);
-            border-color: #4da6ff;
+            background: rgba(255, 71, 126, 0.2);
+            border-color: #ff477e;
             color: #fff;
             transform: translateY(-2px);
         }
-        
+
         .ambient-glow-projects {
             position: absolute;
             width: 600px;
             height: 600px;
-            background: #4da6ff;
+            background: #ff477e;
             filter: blur(150px);
             opacity: 0.15;
             top: -10%;
@@ -156,24 +158,29 @@
     <div class="ambient-glow-projects"></div>
 
     <!-- NAVBAR FOR CONSISTENCY -->
-    <nav class="navbar" style="position: fixed; width: 100%; top: 0; padding: 10px 0; background: rgba(10, 17, 40, 0.8); backdrop-filter: blur(10px); z-index: 100;">
+    <nav class="navbar"
+        style="position: fixed; width: 100%; top: 0; padding: 10px 0; background: rgba(10, 17, 40, 0.8); backdrop-filter: blur(10px); z-index: 100;">
         <ul class="nav-links" style="display: flex; justify-content: center; list-style: none; margin: 0; padding: 0;">
             <li style="padding: 10px 20px; border-radius: 20px; transition: 0.3s; background: rgba(255,255,255,0.05);">
-                <a href="index.html#projects" style="color: #fff; text-decoration: none; font-weight: 500; letter-spacing: 0.5px;">← Return to Portfolio</a>
+                <a href="index.html#projects"
+                    style="color: #fff; text-decoration: none; font-weight: 500; letter-spacing: 0.5px;">← Return to
+                    Portfolio</a>
             </li>
         </ul>
     </nav>
 
     <div class="detailed-projects">
-        <h1 class="gradient-title">Engineering Deep Dives</h1>
-        <p class="subtitle">An inside look at the architecture, deployment strategies, and underlying logic behind my featured developments.</p>
+        <h1 class="gradient-title">My Featured Projects</h1>
+        <p class="subtitle">A closer look at some of the web apps and cloud deployments I've built from scratch.</p>
 
         <div class="project-details-grid">
             <!-- Project 1 -->
             <div id="aws-s3" class="project-detail-card">
-                <h2>☁️ AWS Cloud Website & S3 Routing</h2>
+                <h2>☁️ AWS Static Website Hosting</h2>
                 <p>
-                    Architected a highly available static web delivery pipeline using Amazon Web Services. Configured secure S3 bucket policies for public access isolation, and mapped custom routing rules leveraging DNS resolution to guarantee high availability and low latency endpoint metrics.
+                    I learned how to deploy a full static website to the cloud using Amazon S3. I configured the bucket
+                    policies so the site was publicly accessible, and set up custom DNS routing to securely host it
+                    online.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-pill">AWS S3</span>
@@ -184,9 +191,11 @@
 
             <!-- Project 2 -->
             <div id="bulk-renamer" class="project-detail-card">
-                <h2>📂 Batch File Automator</h2>
+                <h2>📂 Bulk File Renamer</h2>
                 <p>
-                    Engineered an automation script utilized via Google Apps Script to drastically accelerate batch file renaming tasks securely within the cloud. Dynamically parses massive directory trees, applies configurable string manipulations, and reduces manual overhead by 90%.
+                    I built an automation tool using Google Apps Script to quickly rename large amounts of files in
+                    Google Drive. It reads through folders automatically and applies string formatting to save hours of
+                    manual clicking and typing.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-pill">Apps Script</span>
@@ -197,9 +206,11 @@
 
             <!-- Project 3 -->
             <div id="tic-tac-toe" class="project-detail-card">
-                <h2>❌⭕ Interactive Logic Engine</h2>
+                <h2>Tic-Tac-Toe</h2>
                 <p>
-                    A fully responsive engine utilizing vanilla Javascript arrays to instantly calculate algorithmic win-states. It prioritizes O(1) state resolution matrices and dynamic DOM component rendering without leveraging any heavy external frameworks.
+                    A fun, interactive browser game built completely from scratch. I wrote the logic using JavaScript
+                    arrays to check for win/tie states and dynamically update the board on the screen without needing
+                    React or other frameworks.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-pill">DOM Logic</span>
@@ -210,9 +221,11 @@
 
             <!-- Project 4 -->
             <div id="aws-iam" class="project-detail-card">
-                <h2>🔐 Cloud IAM Security Control</h2>
+                <h2>🔐 AWS IAM Security Setup</h2>
                 <p>
-                    Structured a robust security environment within AWS adhering strictly to the Principle of Least Privilege. Deployed granular Identity and Access Management (IAM) controls via JSON policies, heavily restricting unauthorized cross-environment deployment access.
+                    A hands-on project where I explored cloud security by configuring Identity and Access Management
+                    (IAM) in AWS. I created custom JSON policies to restrict user access to specific resources,
+                    following the principle of least privilege.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-pill">AWS IAM</span>
