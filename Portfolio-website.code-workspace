@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"name": "Portfolio-website",
+			"path": "."
+		},
+		{
+			"path": "../../tourism-app"
+		},
+		{
+			"path": "../Bulk File Renamer"
+		},
+		{
+			"path": "../../js"
+		},
+		{
+			"path": "../../SIEMS"
+		},
+		{
+			"path": "../../Downloads/Tourism-Management-System-PHP-Updated"
+		},
+		{
+			"path": "../../Desktop/UID"
+		},
+		{
+			"path": "../../discover-dakshin"
+		},
+		{
+			"path": "../../dakshin"
+		},
+		{
+			"path": "../../weather"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "dakshin"
+	}
+}
