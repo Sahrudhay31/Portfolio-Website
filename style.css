@@ -1077,38 +1077,63 @@
     }
 
     .skill-item {
-        background: #1a1a1a;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         flex: 1 1 220px;
         max-width: 280px;
-        padding: 20px 25px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        padding: 30px 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
-        transition: 0.3s;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
         border: 1px solid rgba(255,255,255,0.05);
         box-sizing: border-box;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .skill-item::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(135deg, rgba(255,71,126,0.1), rgba(157,78,221,0.1));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
     }
 
     .skill-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(255, 71, 126, 0.2);
-        border-color: rgba(255, 71, 126, 0.3);
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(255, 71, 126, 0.2);
+        border-color: rgba(255, 71, 126, 0.5);
+    }
+
+    .skill-item:hover::before {
+        opacity: 1;
     }
 
     .skill-info {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
+        gap: 15px;
         width: 100%;
         justify-content: center;
+        margin: 0;
     }
 
     .skill-icon {
-        font-size: 24px;
+        font-size: 40px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .skill-item:hover .skill-icon {
+        transform: scale(1.2) translateY(-5px);
+        filter: drop-shadow(0 0 15px rgba(255, 71, 126, 0.6));
     }
 
     .skill-name {
@@ -1148,3 +1173,161 @@
     z-index: -1;
     pointer-events: none;
 }
+
+/* EDUCATION TIMELINE */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #ff477e;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -8px;
+    background-color: #1a1a1a;
+    border: 3px solid #ff477e;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.timeline-item:hover::after {
+    background-color: #ff477e;
+    box-shadow: 0 0 10px #ff477e;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.right::after {
+    left: -8px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: #1a1a1a;
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 71, 126, 0.15);
+    border-color: rgba(255, 71, 126, 0.3);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+.timeline-content h4 {
+    color: #ff477e;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.timeline-content p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .timeline-item.left::after, .timeline-item.right::after {
+        left: 23px;
+    }
+    .timeline-item.right {
+        left: 0%;
+    }
+}
+
+/* HACKATHONS */
+.achievements-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.achievement-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 71, 126, 0.2);
+    border-color: rgba(255, 71, 126, 0.4);
+}
+
+.achievement-card h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.trophy-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ff477e;
+    animation: bounceTrophy 2s infinite ease-in-out;
+}
+
+@keyframes bounceTrophy {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
